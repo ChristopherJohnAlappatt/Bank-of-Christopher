@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Bank_homePage</title>
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="static/assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="static/assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="static/assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="static/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="static/assets/css/Parallax-Scroll-Effect.css">
+    <link rel="stylesheet" href="static/assets/css/smoothproducts.css">
+</head>
+
+<body>
+    <div>
+        <div class="header-dark"
+            style="height: 650px;background-image: url(&quot;static/assets/img/Creditcard1.jpg&quot;);opacity: 1;">
+            <nav class="navbar navbar-light navbar-expand-md navigation-clean"
+                style="background-color: #ffffff;height: 72px;opacity: 0.70;filter: blur(0px);">
+                <div class="container"><a class="navbar-brand" href="#"
+                        style="color: rgb(88,135,179);width: 101px;font-size: 30px;font-family: ABeeZee, sans-serif;padding-top: 4px;padding-right: 2px;padding-left: -2px;"><span
+                            style="text-decoration: underline;">Customer List</span></a>
+                    <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span
+                            class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1" style="width: 303px;">
+                        <ul class="nav navbar-nav ml-auto"></ul>
+                        <a href="/">
+                        <button class="btn btn-primary href='Homepage.html '"
+                            data-bs-hover-animate="pulse" type="button"
+                            style="background-color: rgb(93,139,182);font-size: 20px;">Home</button></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container" style="margin-top: -640px;margin-bottom: -22px;background-color: #ffffff;opacity: 0.80;">
+        <div class="table-responsive" style="margin-top: 126px;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sr. No</th>
+                        <th>Name</th>
+                        <th>Email id</th>
+                        <th>Balance</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in data %}
+
+                    <form method="POST" , action="/profile">
+
+                        <tr>
+                            <td name="cid" data-bs-hover-animate="pulse">{{item[0]}}</td>
+
+                            <td name="cname" data-bs-hover-animate="pulse">{{item[1]}}</td>
+
+                            <td name="cemail" data-bs-hover-animate="pulse">{{item[2]}}</td>
+
+                            <td name="cbal" data-bs-hover-animate="pulse">{{item[3]}}</td>
+
+                            <!--<td data-bs-hover-animate="pulse"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" href="{{url_for('prof')}}" style="margin-left: 0px;margin-right: -100px;">Transfer Money</button></td>-->
+                            <td>
+                                <input type="hidden" name="cid" value="{{item[0]}}" />
+                                <input type="hidden" name="cname" value="{{item[1]}}" />
+                                <input type="hidden" name="cemail" value="{{item[2]}}" />
+                                <input type="hidden" name="cbal" value="{{item[3]}}" />
+                                <input type="submit" value="Transfer Money" class="btnAddAction" />
+                            </td>
+                        </tr>
+
+                    </form>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="static/assets/js/smoothproducts.min.js"></script>
+    <script src="static/assets/js/theme.js"></script>
+</body>
+
+</html>
