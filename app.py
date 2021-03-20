@@ -78,8 +78,8 @@ def transaction():
         
         if sender_current_balance>0:
             cursor=mysql.connection.cursor()
-            cursor.execute('Update customers SET Balance=%s Where Name=%s',(sender_current_balance,sender_name))
-            cursor.execute('Update customers SET Balance=%s Where Name=%s',(reciever_current_balance,reciever_username))
+            cursor.execute('Update CUSTOMERS SET Balance=%s Where Name=%s',(sender_current_balance,sender_name))
+            cursor.execute('Update CUSTOMERS SET Balance=%s Where Name=%s',(reciever_current_balance,reciever_username))
             cursor.execute("INSERT INTO transactions(sname,rname,amount) VALUES ( %s, %s,%s)", (sender_name, reciever_username, ramount,))
             mysql.connection.commit()
             return redirect(url_for("transaction2")) 
