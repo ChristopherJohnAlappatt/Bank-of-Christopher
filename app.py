@@ -8,10 +8,10 @@ app = Flask(__name__)
 
 app.secret_key = 'TIGER'
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'alappatt'
-app.config['MYSQL_DB'] = 'CJA_BANK'
+app.config['MYSQL_HOST'] = 'sql6.freemysqlhosting.net'
+app.config['MYSQL_USER'] = 'sql6400231'
+app.config['MYSQL_PASSWORD'] = 'wlByAskHda'
+app.config['MYSQL_DB'] = 'sql6400231'
 
 mysql = MySQL(app)
 
